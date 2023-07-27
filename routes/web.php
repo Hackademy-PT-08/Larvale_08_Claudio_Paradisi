@@ -16,6 +16,6 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', [PublicController::class, 'homepage'])->name('home');
+Route::get('/', [PublicController::class, 'index'])->name('home');
 Route::get('/articoli/crea-articoli', [ArticleController::class, 'create'])->name('create-article');
 Route::post('/articoli/crea-articoli', [ArticleController::class, 'store'])->name('store-article');

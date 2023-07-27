@@ -1,0 +1,46 @@
+#storeForm{
+    width: 50%;
+    margin: auto;
+}
+
+body{
+    background-color: #2f4f4f;
+    color: white;
+}
+#hero{
+    background-image: url(/public/img/pexels-felix-mittermeier-956999.jpg);
+    height: 800px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    position: relative;
+   
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    
+}
+    
+
+#hero .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+
+/* metto il footer in fondo alla pagina */
+footer {
+    
+    bottom:0;
+    left:0;
+    width:100%;
+    }
+

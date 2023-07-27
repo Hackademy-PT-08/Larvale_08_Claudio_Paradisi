@@ -1,25 +1,28 @@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top mb-5" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/"><span class="text-dark"><i class="fa-solid fa-hippo"></i></span>Blogaravel.it</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('home')}}"><span class="text-dark"><i class="fa-solid fa-house"></i></span>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{route('create-article')}}">Link</a>
+          <a class="nav-link active" href="{{route('create-article')}}"><span class="text-dark"><i class="fa-solid fa-pen"></i></span>Crea un Articolo</a>
         </li>
         
         
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="d-flex">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
