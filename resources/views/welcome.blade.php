@@ -33,8 +33,12 @@
             <div class="row justify-content-center">
             @foreach($articles as $article)
                 <div class="col-12 col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+                    <div class="card" style="width: 18rem;"> 
+                    @if($article->image !== '')
+                        <img src="{{asset('storage/' . $article->image) }}" class="card-img-top" alt="{{$article->title}}">
+                    @else  
+                    <img src="https://picsum.photos/200/120" class="card-img-top" alt="{{$article->title}}">
+                    @endif
                         <div class="card-body">
                             <h5 class="card-title">{{$article->title}}</h5>
                             <p class="card-text text-truncate">{!!$article->article!!}...</p>

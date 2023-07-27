@@ -9,7 +9,8 @@
             </div>
         </div>
 
-        <form id="storeForm" class="my-5" method="POST" action="{{route('store-article')}}">
+        <form id="storeForm" class="my-5" method="POST" action="{{route('store-article')}}" enctype="multipart/form-data" >
+            <!-- enctype="multipart/form-data" è essenziale per immettere i file nel form -->
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo dell'articolo</label>
@@ -19,6 +20,11 @@
                 <label for="article" class="form-label">Il tuo articolo</label>
                 <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30"></textarea>
             </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Inserisci un'immagine per rendere il tuo articolo unico</label> <br>
+                <input type="file" name="image" id="">
+            </div>
+            <input type="hidden" name="id" value="">
             <button type="submit" class="btn btn-primary">Invia</button>
         </form>
 
