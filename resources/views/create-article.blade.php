@@ -1,4 +1,11 @@
 <x-layout>
+@if($errors->any())
+        @foreach($errors->all() as $error)
+            
+            <div class="alert bg-danger my-5">{{$error}}</div>    
+            
+        @endforeach
+    @endif
         <div class="my-5"><br/></div>
         <div class="container my-5">
             <div class="row">
@@ -14,19 +21,24 @@
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo dell'articolo</label>
-                <input id="titleInput" type="text" class="form-control" name="title" >
+                <input id="titleInput" type="text" class="form-control" name="title" value="{{old('title')}}" >
             </div>
             <div class="mb-3">
                 <label for="article" class="form-label">Il tuo articolo</label>
-                <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30"></textarea>
+                <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30">{{old('title')}}</textarea>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Inserisci un'immagine per rendere il tuo articolo unico</label> <br>
-                <input type="file" name="image" id="">
+                <input type="file" name="image" id="" >
             </div>
             <input type="hidden" name="id" value="">
-            <button type="submit" class="btn btn-primary">Invia</button>
+            <button id="myInput" type="submit" class="btn btn-primary">Invia</button>
         </form>
+        
+    
+        
+        
+        
 
 
 </x-layout>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -11,7 +12,7 @@ class ArticleController extends Controller
         return view('create-article');
     }
 
-    public function store(Request $request){
+    public function store(StoreArticleRequest $request){
         
         $imageId =uniqid();
         
@@ -19,8 +20,8 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->article = $request->article;
-        
-        if ($request->file('image') !== '') {
+        //ho scordato di mettere ->nullable alla creazione della migration, vado a sistemare con un if/else
+        if ($request->file('image')) {
 
             $article->image = 'image-article-' . $imageId . '.' . $request->file('image')->extension();
             $article->image_id = $imageId;

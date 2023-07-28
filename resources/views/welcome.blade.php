@@ -29,11 +29,11 @@
         <p class="h1 text-center">
             I vostri articoli
         </p>
-        <div class="container my-5 ">
+        <div class="container my-5">
             <div class="row justify-content-center">
             @foreach($articles as $article)
                 <div class="col-12 col-md-3">
-                    <div class="card" style="width: 18rem;"> 
+                    <div class="card my-card" style="width: 18rem;"> 
                     @if($article->image !== '')
                         <img src="{{asset('storage/' . $article->image) }}" class="card-img-top" alt="{{$article->title}}">
                     @else  
@@ -43,6 +43,7 @@
                             <h5 class="card-title">{{$article->title}}</h5>
                             <p class="card-text text-truncate">{!!$article->article!!}...</p>
                             <!-- substr($variabile, da carattere , a carattere) -->
+                            <p>{{$article->image_id}}</p>
                             <a href="#" class="btn btn-primary">In dettaglio</a>
                         </div>
                     </div>
@@ -52,5 +53,6 @@
         </div>
 
     </section>
+
     
 </x-layout>

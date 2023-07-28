@@ -44,3 +44,22 @@ footer {
     width:100%;
     }
 
+    .my-card{
+        border-radius: 8px;
+        border-style:solid;
+        border-color: #0f0202;
+        transition: all ease .300s;
+        outline: #0f02024e solid 3px;
+        color: black;
+        }
+        /*con i due punti hover do l'animazione alle card passanodci sopra con il mouse */
+    .my-card:hover{
+        cursor: pointer;
+       background-color:#2f4f4f ;
+        color: white;
+    }
+
+    .my-model-bg{
+        background-color: #2f4f4f;
+    }
+

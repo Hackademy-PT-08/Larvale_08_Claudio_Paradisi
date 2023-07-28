@@ -3,6 +3,9 @@
 let titleInput = document.getElementById('titleInput');
 let articleInput = document.getElementById('articleInput');
 
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
 
 
 
@@ -24,3 +27,6 @@ addEventListener('input', ()=>{
         articleInput.classList.add('is-valid');
     }
 });
+myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+  });
