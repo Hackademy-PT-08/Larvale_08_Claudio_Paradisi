@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 
@@ -19,3 +20,6 @@ use App\Http\Controllers\ArticleController;
 Route::get('/', [PublicController::class, 'index'])->name('home');
 Route::get('/articoli/crea-articoli', [ArticleController::class, 'create'])->name('create-article');
 Route::post('/articoli/crea-articoli', [ArticleController::class, 'store'])->name('store-article');
+Route::get('/profilo', [UserController::class, 'index'])
+->middleware(['auth', 'verified'])
+->name('profilo');

@@ -2,31 +2,73 @@
 // variabili
 let titleInput = document.getElementById('titleInput');
 let articleInput = document.getElementById('articleInput');
+let nameRegister = document.getElementById('nameRegister');
+let emailRegister = document.getElementById('emailRegister');
+let passwordRegister = document.getElementById('passwordRegister');
+let password_confirmationRegister = document.getElementById('password_confirmationRegister');
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
 
 
 
 
 //funzioni ed eventi
 
-addEventListener('input', ()=>{
-    if(titleInput.value.length < 3){
-        titleInput.classList.add('is-invalid');
+function validShort(target){
+    if(target.value.length < 3){
+        target.classList.add('is-invalid');
     } else {
-        titleInput.classList.remove('is-invalid');
-        titleInput.classList.add('is-valid');
+        target.classList.remove('is-invalid');
+        target.classList.add('is-valid');
     }
+}
+
+function validLong(target){
+    if(target.value.length < 8){
+        target.classList.add('is-invalid');
+    } else {
+        target.classList.remove('is-invalid');
+        target.classList.add('is-valid');
+    }
+}
+
+function validEmail(target){
+    if(!target.value.includes('@')){
+        target.classList.add('is-invalid');
+    } else {
+        target.classList.remove('is-invalid');
+        target.classList.add('is-valid');
+    } 
+    
+}
+
+function validPassword(target1, target2){
+    if(target1.value !== target2.value)
+    {target1.classList.add('is-invalid');
+} else {
+    target1.classList.remove('is-invalid');
+    target1.classList.add('is-valid');
+
+}}
+
+addEventListener('input', ()=> {
+    validShort(titleInput);
 });
 addEventListener('input', ()=>{
-    if(articleInput.value.length < 10){
-        articleInput.classList.add('is-invalid');
-    } else {
-        articleInput.classList.remove('is-invalid');
-        articleInput.classList.add('is-valid');
-    }
+    validLong(articleInput);
 });
-myModal.addEventListener('shown.bs.modal', () => {
-    myInput.focus()
-  });
+addEventListener('input', ()=> {
+    validShort(nameRegister);
+});
+addEventListener('input', ()=> {
+    validLong(passwordRegister);
+});
+addEventListener('input', ()=> {
+    validEmail(emailRegister);
+});
+addEventListener('input', ()=> {
+    validPassword(password_confirmationRegister, passwordRegister);
+});
+
+
+
+

@@ -63,3 +63,23 @@ footer {
         background-color: #2f4f4f;
     }
 
+    #loginForm, #registerForm{
+        width: 50%;
+        margin: auto;
+    }
+    #sectionProfilo{
+        width: 75%;
+        margin: auto;
+        background-color: #2f4f4f;
+        
+    
+    }
+
+    #sectionProfilo .container{
+        border-radius: 10%;
+    }
+    #sectionProfilo img{
+        border-radius: 100%;
+  
+    }
+    
