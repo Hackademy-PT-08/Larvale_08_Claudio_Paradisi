@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <form id="storeForm" class="my-5" method="POST" action="{{route('store-article')}}" enctype="multipart/form-data" >
+        <form id="storeForm" class="my-5" method="POST" action="{{route('article.store')}}" enctype="multipart/form-data" >
             <!-- enctype="multipart/form-data" è essenziale per immettere i file nel form -->
             @csrf
             <div class="mb-3">
@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label for="article" class="form-label">Il tuo articolo</label>
-                <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30">{{old('title')}}</textarea>
+                <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30">{{old('article')}}</textarea>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Inserisci un'immagine per rendere il tuo articolo unico</label> <br>

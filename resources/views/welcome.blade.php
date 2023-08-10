@@ -43,8 +43,11 @@
                             <h5 class="card-title">{{$article->title}}</h5>
                             <p class="card-text text-truncate">{!!$article->article!!}...</p>
                             <!-- substr($variabile, da carattere , a carattere) -->
-                            <p>{{$article->image_id}}</p>
-                            <a href="#" class="btn btn-primary">In dettaglio</a>
+                            <div class="col-8 my-2">  
+                                <a href="{{route('article.show', $article->id)}}" class="btn btn-primary">In dettaglio</a>
+                            </div>
+                            
+
                         </div>
                     </div>
                 </div>

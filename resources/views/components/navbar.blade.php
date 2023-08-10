@@ -10,9 +10,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('home')}}"><span class="text-dark"><i class="fa-solid fa-house"></i></span>Home</a>
         </li>
+        @if(auth()->check())
         <li class="nav-item">
-          <a class="nav-link active" href="{{route('create-article')}}"><span class="text-dark"><i class="fa-solid fa-pen"></i></span>Crea un Articolo</a>
+          <a class="nav-link active" href="{{route('article.create')}}"><span class="text-dark"><i class="fa-solid fa-pen"></i></span>Crea un Articolo</a>
         </li>
+        @endif
         
         
         

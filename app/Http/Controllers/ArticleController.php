@@ -9,7 +9,7 @@ use App\Http\Requests\StoreArticleRequest;
 class ArticleController extends Controller
 {
     public function create(){
-        return view('create-article');
+        return view('articles.create');
     }
 
     public function store(StoreArticleRequest $request){
@@ -34,9 +34,53 @@ class ArticleController extends Controller
             $article->image_id = '';
 
         }
+        $article->user_id = auth()->user()->id;
         $article->save();
 
         return redirect('/');
 
+    }
+    //dettaglio articoli
+    public function show($id){
+        $article = Article::find($id);
+
+        return view('articles.show', ['article' => $article]);
+    }
+    
+    //vista form modifica articolo
+    public function edit($id){
+        $article=Article::find($id);
+        if(auth()->user()->id == $article->user_id){
+        return view('articles.edit', ['article'=>$article]);
+        }else{
+        return redirect()->route('home');
+        }
+    }
+
+    //vista modifica articolo
+    public function update(StoreArticleRequest $request, $id){
+      $article = Article::find($id);
+      $article->title = $request->title;
+      $article->article = $request->article;  
+      if ($request->file('image')) {
+        $imageId =uniqid();
+        $article->image = 'image-article-' . $imageId . '.' . $request->file('image')->extension();
+        $article->image_id = $imageId;
+        $fileName = 'image-article-' . $imageId . '.' . $request->file('image')->extension();
+        $image = $request->file('image')->storeAs('public', $fileName);
+
+        }
+        $article->save();
+
+        return redirect('/'); 
+    }
+
+    //vista elimina articolo
+    public function destroy($id){
+        $article = Article::find($id);
+
+        $article->delete();
+
+        return redirect()->route('home');
     }
 }

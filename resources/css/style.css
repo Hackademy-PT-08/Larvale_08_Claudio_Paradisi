@@ -82,4 +82,8 @@ footer {
         border-radius: 100%;
   
     }
+
+    img{
+        max-height: 500px;
+    }
     
