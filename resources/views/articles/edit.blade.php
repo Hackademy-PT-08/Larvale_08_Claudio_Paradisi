@@ -28,7 +28,16 @@
                 <label for="article" class="form-label">Il tuo articolo</label>
                 <textarea id="articleInput" class="form-control"  name="article" rows="10" cols="30">{{$article->article}}</textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 dropdown">
+                <label for="category" class="form-control dropdown-toggle" type="button" data-bs-toggle="dropdown">Categorie</label>
+                <select name="category[]" id="category" multiple class="form-control dropdown-menu">
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}" class="dropdown-item">{{$category->name}}</option>
+                    @endforeach
+                    
+                </select>
+            </div>
+            <div class="mb-3 mt-5">
                 <label for="image" class="form-label">Inserisci un'immagine per rendere il tuo articolo unico</label> <br>
                 <input type="file" name="image" id="" >
             </div>

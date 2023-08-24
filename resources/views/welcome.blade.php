@@ -40,12 +40,17 @@
                     <img src="https://picsum.photos/200/120" class="card-img-top" alt="{{$article->title}}">
                     @endif
                         <div class="card-body">
+                            @foreach ($article->categories as $category)
+                            <p class=" card-text"> #{{$category->name}}</p>
+                            @endforeach
                             <h5 class="card-title">{{$article->title}}</h5>
+                            
                             <p class="card-text text-truncate">{!!$article->article!!}...</p>
                             <!-- substr($variabile, da carattere , a carattere) -->
                             <div class="col-8 my-2">  
                                 <a href="{{route('article.show', $article->id)}}" class="btn btn-primary">In dettaglio</a>
                             </div>
+                            
                             
 
                         </div>
