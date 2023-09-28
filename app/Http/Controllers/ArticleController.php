@@ -63,7 +63,7 @@ class ArticleController extends Controller
     //vista form modifica articolo
     public function edit($id){
         $article=Article::find($id);
-        $category = Category::all();
+        $categories = Category::all();
 
         if(auth()->user()->id == $article->user_id){
         return view('articles.edit', ['article'=>$article,'categories' => $categories]);

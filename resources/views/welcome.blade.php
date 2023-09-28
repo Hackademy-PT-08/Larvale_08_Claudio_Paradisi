@@ -48,7 +48,7 @@
                             <p class="card-text text-truncate">{!!$article->article!!}...</p>
                             <!-- substr($variabile, da carattere , a carattere) -->
                             <div class="col-8 my-2">  
-                                <a href="{{route('article.show', $article->id)}}" class="btn btn-primary">In dettaglio</a>
+                                <a href="{{'/articoli' . '/' . str_replace(' ', '-', strtolower($article->title)) . '/' . $article->id}}" class="btn btn-primary">In dettaglio</a>
                             </div>
                             
                             
@@ -64,3 +64,27 @@
 
     
 </x-layout>
+ <!-- funzione per viste categorie -->
+    <!-- public function show($id=null)
+    {
+        if ($id):
+            $post = Post:find($id);
+        else:
+            $post = Post:all();
+        endif;
+ 
+        return view('posts.index', [
+            'post' => $post
+        ]);
+ 
+    }
+} -->
+<!--  
+        $urlArticle1 = strtolower($article->title);
+        $urlArticle = str_replace(' ', '-', $urlArticle1); 
+        str_replace(' ', '-', strtolower($article->title))
+    
+    
+    -->
+        
+    

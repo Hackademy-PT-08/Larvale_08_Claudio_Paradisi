@@ -23,7 +23,6 @@ Route::get('/articoli/aggiungi', [ArticleController::class, 'create'])->name('ar
 
 Route::post('/articoli/aggiungi', [ArticleController::class, 'store'])->name('article.store')->middleware('auth');
 
-Route::get('/articoli/dettaglio/{id}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/articoli/modifica/{id}', [ArticleController::class, 'edit'])->name('article.edit')->middleware('auth');
 
@@ -35,3 +34,5 @@ Route::delete('/articoli/elimina/{id}', [ArticleController::class, 'destroy'])->
 Route::get('/profilo', [UserController::class, 'index'])
 ->middleware(['auth', 'verified'])
 ->name('profilo');
+
+Route::get('/articoli/{title}/{id}', [ArticleController::class, 'show'])->name('article.show');
